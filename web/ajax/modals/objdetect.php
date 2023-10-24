@@ -23,7 +23,7 @@ $video_path = $event_path . "/objectdetect.mp4";
         </button>
       </div>
       <div class="modal-body">
-        <video src=<?php urldecode($video_path) ?> type="video/mp4"></video>
+        <video src="?view=view_video&eid=<?php echo $eid?>&file=<?php echo urldecode($video_path) ?>" type="video/mp4"></video>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
