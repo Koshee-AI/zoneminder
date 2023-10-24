@@ -8,6 +8,10 @@ if ( !validInt($eid) ) {
   return;
 }
 
+$event = new ZM\Event($eid);
+$event_path = $event->Path();
+$video_path = $event_path . "/objectdetect.mp4";
+
 ?>
 <div id="objdetectModal" class="modal" tabindex="-1">
   <div class="modal-dialog">
@@ -19,7 +23,7 @@ if ( !validInt($eid) ) {
         </button>
       </div>
       <div class="modal-body">
-        <img src="?view=image&amp;eid=<?php echo $eid ?>&amp;fid=objdetect">
+        <video src=<?php urldecode($video_path) ?> type="video/mp4"></video>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
